@@ -51,16 +51,21 @@ h6 {
   border: 0;
   outline: 0;
   background: none;
-  padding: 1em 4em;
+
+  padding: 1em 2em;
   border-radius: 30px;
   line-height: 100%;
+  text-align: center;
+
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.5);
+
   cursor: pointer;
 }
 
 .primary-btn {
   background-color: white;
   color: $violet;
+
   transition-property: background, color;
   transition-duration: 0.2s;
 }
@@ -90,10 +95,62 @@ h6 {
   }
 }
 
-@media (min-width: 576px) {
-   body {
-      background: url("../images/bg-desktop.svg") no-repeat, $violet;
+footer {
+   .container {
+      @include flex-gap($gap: 1.5em);
    }
+
+  .socials {
+    list-style: none;
+    @include flex-gap($direction: row, $gap: 1em);
+    justify-content: center;
+
+    a {
+      text-decoration: none;
+      color: white;
+      border: 1px solid white;
+      border-radius: 50%;
+
+      transition-property: color, border-color;
+      transition-duration: 0.2s;
+
+      display: block;
+      width: 35px;
+      aspect-ratio: 1;
+      
+      position: relative;
+      .fa {
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+      }
+    }
+
+    a:hover {
+      color: $soft-magenta;
+      border-color: $soft-magenta;
+    }
+  }
+
+  .attribution {
+    text-align: center;
+    line-height: 1.3;
+
+    a {
+      color: $soft-magenta;
+      transition: .4s;
+    }
+    a:hover {
+      color: white;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  body {
+    background: url("../images/bg-desktop.svg") no-repeat, $violet;
+  }
 
   .logo {
     width: 200px;
@@ -111,7 +168,7 @@ h6 {
     .text {
       flex: 1 1 auto;
       text-align: left;
-      padding-top: 3em;
+      padding-top: 2em;
     }
 
     h1 {
@@ -120,6 +177,15 @@ h6 {
     .btn {
       width: auto;
       font-size: 1em;
+      padding-inline: 4em;
     }
+  }
+
+  footer {
+   .container {
+      display:flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+   }
   }
 }

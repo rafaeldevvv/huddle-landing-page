@@ -42,9 +42,10 @@ h6 {
   border: 0;
   outline: 0;
   background: none;
-  padding: 1em 4em;
+  padding: 1em 2em;
   border-radius: 30px;
   line-height: 100%;
+  text-align: center;
   box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
@@ -80,6 +81,52 @@ h6 {
   width: 65%;
 }
 
+footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+footer .socials {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  justify-content: center;
+}
+footer .socials a {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+  transition-property: color, border-color;
+  transition-duration: 0.2s;
+  display: block;
+  width: 35px;
+  aspect-ratio: 1;
+  position: relative;
+}
+footer .socials a .fa {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+footer .socials a:hover {
+  color: hsl(300deg, 69%, 71%);
+  border-color: hsl(300deg, 69%, 71%);
+}
+footer .attribution {
+  text-align: center;
+  line-height: 1.3;
+}
+footer .attribution a {
+  color: hsl(300deg, 69%, 71%);
+  transition: 0.4s;
+}
+footer .attribution a:hover {
+  color: white;
+}
+
 @media (min-width: 576px) {
   body {
     background: url("../images/bg-desktop.svg") no-repeat, hsl(257deg, 40%, 49%);
@@ -99,7 +146,7 @@ h6 {
   #showcase .text {
     flex: 1 1 auto;
     text-align: left;
-    padding-top: 3em;
+    padding-top: 2em;
   }
   #showcase h1 {
     font-size: 2.3em;
@@ -107,5 +154,11 @@ h6 {
   #showcase .btn {
     width: auto;
     font-size: 1em;
+    padding-inline: 4em;
+  }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
   }
 }/*# sourceMappingURL=style.css.map */
