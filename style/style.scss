@@ -23,6 +23,7 @@ body {
   padding: 2.5em;
   color: white;
   @include flex-gap;
+  justify-content: space-between;
 }
 
 .container {
@@ -149,7 +150,7 @@ footer {
 
 @media (min-width: 576px) {
   body {
-    background: url("../images/bg-desktop.svg") no-repeat, $violet;
+    background: url("../images/bg-desktop.svg") no-repeat / cover, $violet;
   }
 
   .logo {
@@ -165,6 +166,7 @@ footer {
       flex: 0 0 55%;
       align-self: center;
     }
+
     .text {
       flex: 1 1 auto;
       text-align: left;

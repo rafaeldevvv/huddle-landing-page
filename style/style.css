@@ -14,6 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3em;
+  justify-content: space-between;
 }
 
 .container {
@@ -129,7 +130,7 @@ footer .attribution a:hover {
 
 @media (min-width: 576px) {
   body {
-    background: url("../images/bg-desktop.svg") no-repeat, hsl(257deg, 40%, 49%);
+    background: url("../images/bg-desktop.svg") no-repeat/cover, hsl(257deg, 40%, 49%);
   }
   .logo {
     width: 200px;
