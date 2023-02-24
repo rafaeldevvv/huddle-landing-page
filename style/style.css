@@ -8,8 +8,17 @@
 body {
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
-  background: url("../images/bg-mobile.svg") no-repeat, hsl(257deg, 40%, 49%);
+  background: url("../images/bg-mobile.svg") no-repeat top/100% auto, hsl(257deg, 40%, 49%);
   padding: 2.5em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.container {
+  max-width: 1150px;
+  margin-inline: auto;
 }
 
 img {
@@ -23,4 +32,80 @@ h4,
 h5,
 h6 {
   font-family: "Poppins", sans-serif;
+}
+
+.logo {
+  width: 125px;
+}
+
+.btn {
+  border: 0;
+  outline: 0;
+  background: none;
+  padding: 1em 4em;
+  border-radius: 30px;
+  line-height: 100%;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: white;
+  color: hsl(257deg, 40%, 49%);
+  transition-property: background, color;
+  transition-duration: 0.2s;
+}
+
+.primary-btn:hover {
+  color: white;
+  background: hsl(300deg, 69%, 71%);
+}
+
+#showcase .container {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+#showcase .text {
+  text-align: center;
+}
+#showcase h1 {
+  margin-bottom: 0.8em;
+}
+#showcase p {
+  line-height: 1.5;
+  margin-bottom: 1.4em;
+}
+#showcase .btn {
+  width: 65%;
+}
+
+@media (min-width: 576px) {
+  body {
+    background: url("../images/bg-desktop.svg") no-repeat, hsl(257deg, 40%, 49%);
+  }
+  .logo {
+    width: 200px;
+  }
+  #showcase .container {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+  #showcase .mockup {
+    flex: 0 0 55%;
+    align-self: center;
+  }
+  #showcase .text {
+    flex: 1 1 auto;
+    text-align: left;
+    padding-top: 3em;
+  }
+  #showcase h1 {
+    font-size: 2.3em;
+  }
+  #showcase .btn {
+    width: auto;
+    font-size: 1em;
+  }
 }/*# sourceMappingURL=style.css.map */

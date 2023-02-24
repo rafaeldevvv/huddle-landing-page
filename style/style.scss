@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Chakra+Petch:wght@300;400;500;600&family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Orbitron:wght@400;500;600;700;800;900&family=Play:wght@400;700&family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&family=Press+Start+2P&family=Rajdhani:wght@500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Chakra+Petch:wght@300;400;500;600&family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Orbitron:wght@400;500;600;700;800;900&family=Play:wght@400;700&family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&family=Press+Start+2P&family=Rajdhani:wght@500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=VT323&display=swap");
 
-$violet: hsl(257,40%, 49%);
+$violet: hsl(257, 40%, 49%);
 $soft-magenta: hsl(300, 69%, 71%);
 
 * {
@@ -9,15 +9,29 @@ $soft-magenta: hsl(300, 69%, 71%);
   box-sizing: border-box;
 }
 
+$section-gap: 3em;
+@mixin flex-gap($direction: column, $gap: $section-gap) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
 body {
-   min-height: 100vh;
-   font-family: "Open Sans", sans-serif;
-   background: url("../images/bg-mobile.svg") no-repeat, $violet;
-   padding: 2.5em;
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  background: url("../images/bg-mobile.svg") no-repeat top / 100% auto, $violet;
+  padding: 2.5em;
+  color: white;
+  @include flex-gap;
+}
+
+.container {
+  max-width: 1150px;
+  margin-inline: auto;
 }
 
 img {
-   max-width: 100%;
+  max-width: 100%;
 }
 
 h1,
@@ -26,5 +40,86 @@ h3,
 h4,
 h5,
 h6 {
-   font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo {
+  width: 125px;
+}
+
+.btn {
+  border: 0;
+  outline: 0;
+  background: none;
+  padding: 1em 4em;
+  border-radius: 30px;
+  line-height: 100%;
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: white;
+  color: $violet;
+  transition-property: background, color;
+  transition-duration: 0.2s;
+}
+.primary-btn:hover {
+  color: white;
+  background: $soft-magenta;
+}
+
+#showcase {
+  .container {
+    @include flex-gap;
+  }
+
+  .text {
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 0.8em;
+  }
+  p {
+    line-height: 1.5;
+    margin-bottom: 1.4em;
+  }
+
+  .btn {
+    width: 65%;
+  }
+}
+
+@media (min-width: 576px) {
+   body {
+      background: url("../images/bg-desktop.svg") no-repeat, $violet;
+   }
+
+  .logo {
+    width: 200px;
+  }
+
+  #showcase {
+    .container {
+      @include flex-gap($direction: row, $gap: 2em);
+    }
+
+    .mockup {
+      flex: 0 0 55%;
+      align-self: center;
+    }
+    .text {
+      flex: 1 1 auto;
+      text-align: left;
+      padding-top: 3em;
+    }
+
+    h1 {
+      font-size: 2.3em;
+    }
+    .btn {
+      width: auto;
+      font-size: 1em;
+    }
+  }
 }
